@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="live_feed=true" audit="true" extends="task" label="Project" max_length="40" name="x_7998_pm_project" type="collection">
+        <element label="End" max_length="40" name="end" type="glide_date"/>
+        <element label="Percent complete" max_length="15" name="percent_complete" type="percent_complete"/>
+        <element label="POC" max_length="32" name="poc" reference="sys_user" type="reference"/>
+        <element label="Stakeholder" max_length="32" name="stakeholder" reference="sys_user" type="reference"/>
+        <element label="Start" max_length="40" name="start" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" read_only="true" type="string">
+            <choice>
+                <element label="On track" sequence="0" value="10"/>
+                <element label="On track - open issues" sequence="1" value="20"/>
+                <element label="Medium Risk - open issues" sequence="2" value="30"/>
+                <element label="High Risk - open issues" sequence="3" value="40"/>
+                <element label="Blocked" sequence="4" value="50"/>
+            </choice>
+        </element>
+        <element label="Status Updated" max_length="40" name="status_date" read_only="true" type="glide_date"/>
+        <element attributes="no_truncate=true,edge_encryption_enabled=true" label="Status report" max_length="1000" name="status_report" read_only="true" type="string"/>
+    </element>
+</database>
